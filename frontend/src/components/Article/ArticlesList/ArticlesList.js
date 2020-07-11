@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {deleteCategory, getCategories} from "../../../store/actions/category";
+import {getCategories} from "../../../store/actions/category";
 import {useDispatch, useSelector} from "react-redux";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";

@@ -17,6 +17,16 @@ router.get('/', authorization, async (req, res) => {
     }
 });
 
+router.get('/unregistered', async (req, res) => {
+    try {
+        const categories = await Category.find();
+
+        res.send(categories)
+    } catch (e) {
+        res.status(404).send(e)
+    }
+});
+
 router.get('/:id', authorization, async (req, res) => {
     try {
         const category = await Category.findOne({_id: req.params.id});

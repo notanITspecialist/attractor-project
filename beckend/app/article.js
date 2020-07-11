@@ -43,6 +43,16 @@ router.post('/', [authorization, upload.single('image')], async (req, res) => {
     }
 });
 
+router.get('/unregistered', async (req, res) => {
+    try {
+        const articles = await Article.find();
+
+        res.send(articles)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+});
+
 router.get('/', authorization, async (req, res) => {
     try {
         if(req.query.category) {
